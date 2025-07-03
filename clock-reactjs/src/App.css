@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.clock-wrapper{
+  width: 500px;
+  height: 600px;
+  border:2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+.tab-toggle{
+  width: 100%;
+  height: 50px;
+  display: grid;
+  grid-template-columns: repeat(2,49%);
+  gap: 10px;
+  font-size: larger;
+  font-weight: 700;
+place-items: center;
+}
+.tab{
+  order: 1px solid gray;
+  box-sizing: border-box;
+  box-shadow: 1px 1px gray;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+.tab:hover{
+  transform: scale(1.02);
+  background-color: gray;
+}
+.stopwatch-button{
+  display: grid;
+  grid-template-columns: repeat(3,31%);
+  height: 40px;
+  gap: 2%;
+  margin-left: 3%;
+  position: inherit;
+  bottom: 0;  /* Stick to the bottom */
+  left: 4%;   /* optional, based on your design */
+}
+.stopwatch-button p{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: medium;
+  border: 1px solid gray ;
+  cursor: pointer;
+width: 100%;
+transition: transform 0.3s ease;
+}
+.stopwatch-button p:hover{
+  transform: scale(1.03);
+}
+.stopwatch-clock{
+  display: flex;
+  margin: 30px;
+  padding: 10px;
+  border: 2px solid gray;
+  border-radius: 50% 50%;
+  height: 200px;
+  width: 80%;
+  place-items: center;
+  justify-content: center;
+}
+.lap-details{
+  height: 150px;
+  width: 100%;
+  display: flex ;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+}
