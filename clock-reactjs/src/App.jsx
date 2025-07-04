@@ -25,17 +25,22 @@ function App() {
 }
 function StopwatchComponent() {
   const [watchTimer,setWatchTimer]=useState(0);
+  const [watchTimerMin,setWatchTimerMin]=useState(0);
+  const [watchTimerSec,setWatchTimerSec]=useState(0);
   const [isRunning,setIsRunning]=useState(false);
   const [lapData,setLapData]=useState([]);
   useEffect(() => {
     if(isRunning){
 const intervalId = setInterval(() => {
-      setWatchTimer(watchTimer => watchTimer + 1);  // ✅ always latest value
-      console.log("Timer incremented");
+      setWatchTimer(watchTimer => watchTimer + 1); 
+      if(watchTimer%60===0) setWatchTimerMin(watchTimer=>watchTimer/60);
+    setWatchTimerSec(watchTimer=>watchTimer%60); 
+      
     }, 1000);
 
     return () => clearInterval(intervalId);  
     }
+    
     
   }, [isRunning,watchTimer]); 
   const handleReset=()=>{
@@ -53,7 +58,7 @@ const intervalId = setInterval(() => {
   return (<>
   <div>Stop watch component is rendered   </div>
   <div className="stopwatch-clock">
-{watchTimer} seconds
+{watchTimerMin}:{watchTimerSec} min
   </div>
   <div className="lap-details">
 {lapData.map((data)=>{
