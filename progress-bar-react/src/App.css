@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.progress-bar-wrapper{
+  margin-top: 20px;
+  width: 300px;
+  height: 100px;
+}
+.progress-bar {
+  height: 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  transition: width 0.3s ease;
+  border-radius: 6px; 
+  font-size: medium;
+  font-weight: 600;
+  
+}
